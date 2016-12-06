@@ -1,0 +1,10 @@
+# $allInputs      -> request body   (ie: $allInputs.bla)
+# $input.params() -> request header (ie: $input.params('Authorization'))
+# $input.json()   -> request jsons  (ie: $input.json('$.callToActions'))
+
+operationName: $allInputs.bla
+title: $allInputs.bleh
+cardStyles:
+  textColor: $allInputs.blabla
+jsontest: $input.json('$.jsontest')
+paramstest: $input.params('paramstest')

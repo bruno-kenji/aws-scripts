@@ -1,0 +1,7 @@
+# provides environment variables to the shell scripts
+
+API_ID="API ID"
+RESPONSE_TEMPLATES='{ "application/json": "#set ($errorMessageObj = $util.parseJson($input.path(\"$.errorMessage\")))\n#set ($bodyObj = $util.parseJson($input.body))\n\n{\n\"message\" : \"$errorMessageObj.message\",\n\"statusCode\" : \"$errorMessageObj.statusCode\",\n\"code\" : \"$errorMessageObj.code\",\n\"time\" : \"$errorMessageObj.time\",\n\"errors\" : [\n#foreach($elem in $errorMessageObj.errors)\n    {\n      \"attribute\" : \"$elem.attribute\",\n      \"message\" : [\n        #foreach($message in $elem.message)\n        \"$message\"#if($foreach.hasNext),#end\n        #end\n      ]\n    }#if($foreach.hasNext),#end\n\n#end\n]\n}" }'
+
+export API_ID
+export RESPONSE_TEMPLATES

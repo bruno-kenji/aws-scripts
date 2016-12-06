@@ -1,0 +1,7 @@
+# headerParam: required?<boolean>
+# tip: set everything to false here, and make the validation in the Lambda (recommended)
+
+Authorization:
+  false
+teste:
+  false
