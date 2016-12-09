@@ -14,14 +14,14 @@ See .main.sh.sample and create the .main.sh file
 
 ### Mapping the integration requests for each lambda
 Use the following structure:  
-api-name > lambda-name > requuest-headers.yaml  
-api-name > lambda-name > requuest-querystrings.yaml  
-api-name > lambda-name > requuest-template.yaml
+api-name > lambda-name > request-headers.yaml  
+api-name > lambda-name > request-querystrings.yaml  
+api-name > lambda-name > request-template.yaml
 
 ### Running a script
 Execute the desired script via bash with root authorization, ie:
 ```
-. ./get-apis.sh
+. ./support/get-apis.sh
 ```
 
 ALWAYS EXECUTE FROM PROJECT ROOT
