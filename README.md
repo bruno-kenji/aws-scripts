@@ -14,9 +14,10 @@ See .main.sh.sample and create the .main.sh file
 
 ### Mapping the integration requests for each lambda
 Use the following structure:  
-api-name > lambda-name > request-headers.yaml  
-api-name > lambda-name > request-querystrings.yaml  
-api-name > lambda-name > request-template.yaml
+api-name > lambda-name > request-headers.yaml # used on put-method.sh
+api-name > lambda-name > request-querystrings.yaml #used on put-method.sh
+api-name > lambda-name > request-template.yaml //used on put-integration.sh
+api-name > lambda-name > invocation-params.json #used on invoke-lambda.sh
 
 ### Running a script
 Execute the desired script via bash with root authorization, ie:
