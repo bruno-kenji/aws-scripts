@@ -2,6 +2,11 @@
 
 #!/bin/bash
 
+# .main.sh provides API_ID
+. ./support/aws-scripts/.main.sh
+
+API_NAME="$(aws apigateway get-rest-api --rest-api-id $API_ID | jq -r '.name')"
+
 # can receive lambda name
 if [ $1 ]
 then
@@ -10,7 +15,7 @@ else
   read -p "Lambda name (not the file name!): " LAMBDA_NAME
 fi
 
-read -p "Arguments (blob): " INVOKE_ARGS
+INVOKE_ARGS="${API_NAME}/${LAMBDA_NAME}/invocation-params.json"
 
 invokeLambda() {
   aws lambda invoke-async \
